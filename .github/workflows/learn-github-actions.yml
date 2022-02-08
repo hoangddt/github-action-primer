@@ -13,3 +13,8 @@ jobs:
         run: git remote add example $REMOTE_REPO_URL
       - run: git remote -v > remote.txt
       - run: cat remote.txt
+      - name: Upload artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: remote-config
+          path: remote.txt
